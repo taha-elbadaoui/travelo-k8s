@@ -6,3 +6,16 @@ metadata:
 type: Opaque
 stringData:
   MYSQL_ROOT_PASSWORD: taha2005
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: travelo-database
+  namespace: travelo
+spec:
+  selector:
+    app: travelo-database
+  ports:
+    - port: 3306
+      targetPort: 3306
